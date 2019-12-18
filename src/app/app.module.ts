@@ -13,6 +13,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ComptesComponent } from './comptes/comptes.component';
 import {HttpClientModule} from '@angular/common/http';
+import { SecretairehomeComponent } from './secretairehome/secretairehome.component';
+import { Sidebar2Component } from './sidebar2/sidebar2.component';
+import { PatienthomeComponent } from './patienthome/patienthome.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import {HttpClientModule} from '@angular/common/http';
     AdminhomeComponent,
     SidebarComponent,
     FooterComponent,
-    ComptesComponent
+    ComptesComponent,
+    SecretairehomeComponent,
+    Sidebar2Component,
+    PatienthomeComponent
   ],
   imports: [
     BrowserModule,
