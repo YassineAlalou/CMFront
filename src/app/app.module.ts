@@ -16,6 +16,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { SecretairehomeComponent } from './secretairehome/secretairehome.component';
 import { Sidebar2Component } from './sidebar2/sidebar2.component';
 import { PatienthomeComponent } from './patienthome/patienthome.component';
+import { Sidebar3Component } from './sidebar3/sidebar3.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PatienthomeComponent } from './patienthome/patienthome.component';
     ComptesComponent,
     SecretairehomeComponent,
     Sidebar2Component,
-    PatienthomeComponent
+    PatienthomeComponent,
+    Sidebar3Component
   ],
   imports: [
     BrowserModule,
