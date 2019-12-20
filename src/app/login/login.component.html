@@ -1,0 +1,107 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/assets/img/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Bienvenue au Cabinet Medical
+  </a>
+</nav>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col">
+    </div>
+
+    <div class="col-12">
+      <form>
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title">LOGIN</h4>
+                    <p class="card-category">Authentication</p>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-5">
+
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Username</label>
+                            <input type="text" name="username" id="username" placeholder="{{ user.username}}" class="form-control" [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}">
+                          </div>
+                          <div class="alert alert-danger" *ngIf='user.username ==""'>
+                            le login est obligatoire !
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Password</label>
+                            <input type="password" name="password" id="password" placeholder="{{ user.password}}" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+                          </div>
+                          <div class="alert alert-danger" *ngIf='user.password ==""'>
+                            le mot de passe est obligatoire !
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12">
+
+                        </div>
+                      </div>
+                      <p></p>
+                      <button type="submit" (click)="login()" class="btn btn-primary pull-left">LOGIN</button>
+                      <div class="clearfix"></div>
+
+                      <div class="alert alert-danger" *ngIf="authentificationService.temoin">
+                        <strong>Erreur!</strong> Informations incorrectes ! veuillez resaisir vos informations !
+                      </div>
+
+                      <p></p>
+                      <p></p>
+                      <p></p>
+                      <a [routerLink]="['/register']" class="stretched-link">Register</a>
+
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card card-profile">
+                  <div class="card-avatar">
+                    <a href="#pablo">
+                      <img class="img" src="../assets/img/faces/marc.jpg" />
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-category text-gray">Medecin</h6>
+                    <h4 class="card-title">Dr. X</h4>
+                    <p class="card-description">
+                      Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col">
+
+    </div>
+
+  </div>
+
+</div>
+

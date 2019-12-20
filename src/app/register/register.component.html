@@ -1,0 +1,136 @@
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/assets/img/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Bienvenue au Cabinet Medical
+  </a>
+</nav>
+<div class="container">
+  <div class="row">
+
+    <div class="col">
+    </div>
+
+
+    <div class="col-12">
+      <form>
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title">Register</h4>
+                    <p class="card-category">Please enter your informations</p>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-5">
+
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Login</label>
+                            <input type="text" name="login" id="login" class="form-control" [(ngModel)]="userRegiter.username" placeholder="{{ userRegiter.username}}" [ngModelOptions]="{standalone: true} ">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" [(ngModel)]="userRegiter.password" placeholder="{{ userRegiter.password}}" [ngModelOptions]="{standalone: true} ">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Confirm Password</label>
+                            <input type="password" name="confirm" id="confirm" class="form-control" [(ngModel)]="repassword" placeholder="{{repassword}}" [ngModelOptions]="{standalone: true} ">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nom</label>
+                          <input type="text" name="nom" id="nom" class="form-control" [(ngModel)]="userRegiter.nom" placeholder="{{ userRegiter.nom}}" [ngModelOptions]="{standalone: true} ">
+                        </div>
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Prenom</label>
+                          <input type="text" name="prenom" id="prenom" class="form-control" [(ngModel)]="userRegiter.prenom" placeholder="{{ userRegiter.prenom}}" [ngModelOptions]="{standalone: true} ">
+                        </div>
+                      </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Numero Telephone</label>
+                            <input type="text" name="tel" id="tel" class="form-control" [(ngModel)]="userRegiter.Tel" placeholder="{{ userRegiter.Tel}}" [ngModelOptions]="{standalone: true} ">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Age</label>
+                          <input type="text" name="age" id="age" class="form-control" [(ngModel)]="userRegiter.Age" placeholder="{{ userRegiter.Age}}" [ngModelOptions]="{standalone: true} ">
+                        </div>
+                      </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+
+                        </div>
+                      </div>
+                      <p></p>
+                      <button type="submit" (click)="register()" class="btn btn-primary pull-left">Register</button>
+                      <div class="clearfix"></div>
+
+                      <p></p>
+                      <p></p>
+                      <p></p>
+                      <a [routerLink]="['/login']" class="stretched-link">back to Login page</a>
+
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card card-profile">
+                  <div class="card-avatar">
+                    <a href="#pablo">
+                      <img class="img" src="../assets/img/faces/marc.jpg" />
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-category text-gray">CEO / Co-Founder</h6>
+                    <h4 class="card-title">Alec Thompson</h4>
+                    <p class="card-description">
+                      Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col">
+
+    </div>
+
+  </div>
+
+</div>
+
