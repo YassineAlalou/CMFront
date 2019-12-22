@@ -10,7 +10,8 @@ declare var swal: any;
 })
 export class ComptesComponent implements OnInit {
 
-  public  users;
+  users;
+  public  roles;
   public user: User = new User();
   public userEditer: User = new User();
   public editer = false;
@@ -25,6 +26,11 @@ export class ComptesComponent implements OnInit {
       this.users = data;
       console.log(this.users);
     });
+    this.authentificationService.getAllRoles().subscribe( ( data: any[] ) => {
+      this.roles = data;
+      console.log(this.roles);
+    });
+
   }
 
   ajouterUser(e) {
@@ -40,5 +46,46 @@ export class ComptesComponent implements OnInit {
         });
       });
   }
+
+  deleteUser(id: any) {
+    this.authentificationService.deleteUser(id).subscribe(( data) => {
+      swal('User Supprimé!', '', 'success');
+      this.authentificationService.getAllUsers().subscribe( ( data: any[] ) => {
+        this.users = data;
+      });
+    });
+  }
+
+  editerUser(id) {
+    this.editer = true;
+    this.authentificationService.getUser(id).subscribe((data: any) => {
+      this.user.id = data.body.id;
+      this.user.username = data.body.username;
+      this.user.password = data.body.password;
+      this.user.repassword = data.body.repassword;
+      this.user.nom = data.body.nom;
+      this.user.prenom = data.body.prenom;
+      this.user.Tel = data.body.Tel;
+      this.user.Age = data.body.Age;
+    });
+  }
+
+  validerModification() {
+    console.log(this.user);
+    this.authentificationService.updateUser(this.user).subscribe((data) => {
+      this.authentificationService.getAllUsers().subscribe((data: any[]) => {
+        this.users = data;
+        console.log(data);
+      });
+
+    });
+
+    this.editer = false;
+    this.user = new User();
+
+  }
+
+
+
 
 }

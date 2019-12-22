@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import * as jwt_decode from 'jwt-decode';
+import {User} from '../classes/user';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import * as jwt_decode from 'jwt-decode';
 export class AuthentificationService {
 
   url = 'http://localhost:8085/';
+
   public temoin = false;
   public temoinRegister = false;
 
@@ -92,6 +94,10 @@ export class AuthentificationService {
     return this.http.get(this.url + 'User/all');
   }
 
+  getAllRoles() {
+    return this.http.get(this.url + 'Role/all');
+  }
+
   ajouterUser(user) {
     return this.http.post(this.url + 'User/registerS' , {
       nom: user.nom,
@@ -102,6 +108,30 @@ export class AuthentificationService {
       repassword : user.repassword,
       age: user.Age
     }, {observe: 'response'});
+  }
+
+  deleteUser(id: any) {
+    console.log(id);
+    return this.http.delete(this.url + 'User/' + id, { observe: 'response'});
+
+  }
+
+  getUser(id) {
+    return this.http.get(this.url + 'User/' + id , { observe: 'response'});
+  }
+
+  updateUser(user) {
+    console.log('user update', user);
+    return this.http.put(this.url + 'User/' + user.id, {
+        nom: user.nom,
+        prenom: user.prenom,
+        tel: user.Tel,
+        username: user.username,
+        password: user.password,
+        repassword : user.repassword,
+        age: user.Age
+      },
+     { observe: 'response'});
   }
 
 
