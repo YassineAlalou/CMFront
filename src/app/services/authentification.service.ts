@@ -92,5 +92,17 @@ export class AuthentificationService {
     return this.http.get(this.url + 'User/all');
   }
 
+  ajouterUser(user) {
+    return this.http.post(this.url + 'User/registerS' , {
+      nom: user.nom,
+      prenom: user.prenom,
+      tel: user.Tel,
+      username: user.username,
+      password: user.password,
+      repassword : user.repassword,
+      age: user.Age
+    }, {observe: 'response'});
+  }
+
 
 }

@@ -23,7 +23,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Login</label>
-                        <input type="text" name="login" id="login" class="form-control">
+                        <input type="text" name="login" id="login" class="form-control" [(ngModel)]="user.username">
                       </div>
                     </div>
                   </div>
@@ -31,7 +31,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Password</label>
-                        <input type="password" name="password" id="password" class="form-control">
+                        <input type="password" name="password" id="password" class="form-control" [(ngModel)]="user.password">
                       </div>
                     </div>
                   </div>
@@ -39,7 +39,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Confirm Password</label>
-                        <input type="password" name="confirm" id="confirm" class="form-control">
+                        <input type="password" name="confirm" id="confirm" class="form-control" [(ngModel)]="user.repassword">
                       </div>
                     </div>
                   </div>
@@ -47,7 +47,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Nom</label>
-                        <input type="text" name="nom" id="nom" class="form-control">
+                        <input type="text" name="nom" id="nom" class="form-control" [(ngModel)]="user.nom">
                       </div>
                     </div>
                   </div>
@@ -55,7 +55,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Prenom</label>
-                        <input type="text" name="prenom" id="prenom" class="form-control">
+                        <input type="text" name="prenom" id="prenom" class="form-control" [(ngModel)]="user.prenom">
                       </div>
                     </div>
                   </div>
@@ -63,7 +63,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Numero de Telephone</label>
-                        <input type="text" name="tel" id="tel" class="form-control">
+                        <input type="text" name="tel" id="tel" class="form-control" [(ngModel)]="user.Tel">
                       </div>
                     </div>
                   </div>
@@ -71,7 +71,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Age</label>
-                        <input type="number" name="age" id="age" class="form-control">
+                        <input type="number" name="age" id="age" class="form-control" [(ngModel)]="user.Age">
                       </div>
                     </div>
                   </div>
@@ -81,7 +81,7 @@
                     </div>
                   </div>
                   <p></p>
-                  <button type="submit" class="btn btn-outline-primary pull-left">Ajouter</button>
+                  <button type="submit" class="btn btn-outline-primary pull-left" (click)="ajouterUser($event)">Ajouter</button>
                   <button type="reset" class="btn btn-outline-warning pull-left">Annuler</button>
                   <div class="clearfix"></div>
 
@@ -106,6 +106,10 @@
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
                 </p>
+
+                <button type="reset" class="btn btn-outline-danger pull-left">Supprimer</button>
+                <button type="reset" class="btn btn-outline-dark pull-left">Modifier</button>
+
 
               </div>
             </div>

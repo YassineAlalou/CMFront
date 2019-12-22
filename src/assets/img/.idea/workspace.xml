@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="baffa270-13cb-4adf-976f-c217a8141539" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../app/adminhome/adminhome.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/adminhome/adminhome.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/adminhome/adminhome.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/adminhome/adminhome.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/classes/user.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/classes/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/comptes/comptes.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/comptes/comptes.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/comptes/comptes.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/comptes/comptes.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/footer/footer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/footer/footer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/footer/footer.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/footer/footer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/guards/authentif.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/guards/authentif.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/guards/patient.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/guards/patient.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/guards/secretaire.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/guards/secretaire.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/header/header.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/header/header.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/header/header.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/header/header.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/login/login.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/login/login.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/login/login.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/patienthome/patienthome.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/patienthome/patienthome.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/patienthome/patienthome.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/patienthome/patienthome.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/register/register.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/register/register.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/register/register.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/register/register.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/secretairehome/secretairehome.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/secretairehome/secretairehome.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/secretairehome/secretairehome.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/secretairehome/secretairehome.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/services/authentification.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/services/authentification.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar/sidebar.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar/sidebar.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar/sidebar.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar/sidebar.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar2/sidebar2.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar2/sidebar2.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar2/sidebar2.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar2/sidebar2.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar3/sidebar3.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar3/sidebar3.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar3/sidebar3.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/sidebar3/sidebar3.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../css/material-dashboard-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../css/material-dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../css/material-dashboard.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../css/material-dashboard.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Macbook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apple-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cover.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/card-profile1-square.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/card-profile2-square.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faces/marc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iPad2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imac1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ipad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iphonex.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sidebar-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sidebar-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sidebar-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sidebar-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/core/bootstrap-material-design.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/core/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/core/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/material-dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/material-dashboard.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/material-dashboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/arrive.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/bootstrap-notify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/bootstrap-selectpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/bootstrap-tagsinput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/chartist.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/fullcalendar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/jasny-bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/jquery-jvectormap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/jquery.bootstrap-wizard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/jquery.tagsinput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/jquery.validate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/nouislider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/perfect-scrollbar.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../js/plugins/sweetalert2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_alerts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_cards.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_checkboxes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_core-bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_example-pages.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_fixed-plugin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_footers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_headers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_info-areas.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_misc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_popups.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_radios.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_ripples.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_sidebar-and-main-panel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_social-buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_tabs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_togglebutton.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_breadcrumb.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_button-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_carousel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_close.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_code.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_jumbotron.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_media.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_print.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_root.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_transitions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/bootstrap-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/bootstrap-reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_background-variant.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_border-radius.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_caret.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_gradients.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_hover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_image.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_nav-divider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_navbar-align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_reset-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_resize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_size.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_table-row.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_text-emphasis.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_text-hide.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_text-truncate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/mixins/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_background.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_borders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_embed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_flex.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_position.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_screenreaders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_sizing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/bootstrap/scss/utilities/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/cards/_card-plain.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/cards/_card-profile.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/cards/_card-stats.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_animations.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_chartist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_colored-shadows.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_drawer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_hover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_navbar-colors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_navs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_sidebar-color.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_transparency.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/mixins/_vendor-prefixes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/plugins/_animate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/plugins/_chartist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/plugins/_perfect-scrollbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_body.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_bootstrap-material-design-base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_bootstrap-material-design.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_brand.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_code.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_colors-map.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_colors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_drawer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_menu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_modals.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_snackbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_state.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scss/material-dashboard/variables/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../custom-theme.scss" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="15" />
+    <option name="y" value="30" />
+    <option name="width" value="1890" />
+    <option name="height" value="960" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../CM_Spring" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="baffa270-13cb-4adf-976f-c217a8141539" name="Default Changelist" comment="" />
+      <created>1576834059097</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576834059097</updated>
+      <workItem from="1576834060724" duration="37000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="37000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24939272" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
