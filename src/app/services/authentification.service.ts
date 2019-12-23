@@ -134,6 +134,12 @@ export class AuthentificationService {
      { observe: 'response'});
   }
 
+  Activer(username) {
+    console.log('Activer', username);
+    return this.http.put(this.url + 'User/activer/' + username,
+      { observe: 'response'});
+  }
+
 
 
 }

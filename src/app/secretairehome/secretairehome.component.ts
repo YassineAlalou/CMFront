@@ -14,7 +14,7 @@ export class SecretairehomeComponent implements OnInit {
   users;
   public user: User = new User();
   private repassword;
-  public patients: any[];
+  public patients = new Array();
 
   constructor(public router: Router, private authentificationService: AuthentificationService) {
     this.repassword = '';
@@ -24,12 +24,40 @@ export class SecretairehomeComponent implements OnInit {
     this.authentificationService.getAllUsers().subscribe( ( data: any[] ) => {
       this.users = data;
       for (const val of this.users) {
-       if (val.roles.length === 0) {
-        console.log(val);
-        this.patients = val;
+          if (val.roles.length === 0) {
+          console.log(val);
+          this.patients.push(val);
       }
       }
+      console.log(this.patients);
     });
-    console.log(this.patients);
+
+    this.authentificationService.getAllUsers().subscribe( ( data: any[] ) => {
+      this.users = data;
+      for (const val of this.users) {
+        for (const val2 of val.roles) {
+        if (val2.libelle === 'PATIENT') {
+          console.log(val);
+          this.patients.push(val);
+        }
+        }
+      }
+      console.log(this.patients);
+    });
   }
+
+  Activer(username) {
+    this.authentificationService.Activer(username).subscribe((data) => {
+      this.authentificationService.getAllUsers().subscribe((data: any[]) => {
+        this.users = data;
+        console.log(data);
+      });
+
+    });
+
+  }
+
+
 }
+
+
