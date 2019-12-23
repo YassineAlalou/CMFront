@@ -63,7 +63,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Numero de Telephone</label>
-                        <input type="text" name="tel" id="tel" class="form-control" [(ngModel)]="user.Tel">
+                        <input type="text" name="tel" id="tel" class="form-control" [(ngModel)]="user.tel">
                       </div>
                     </div>
                   </div>
@@ -71,7 +71,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Age</label>
-                        <input type="number" name="age" id="age" class="form-control" [(ngModel)]="user.Age">
+                        <input type="number" name="age" id="age" class="form-control" [(ngModel)]="user.age">
                       </div>
                     </div>
                   </div>
@@ -94,38 +94,37 @@
 
 
           <!-- Informations d'un profil -->
-          <div class="card-body" *ngIf="users"  >
+          <div class="card-body" *ngIf="users" >
           <div class="col-md-12" >
             <div class="card card-profile"*ngFor="let element of users">
               <div class="card-avatar">
                 <a href="#pablo">
-                  <img class="img" src="../assets/img/faces/marc.jpg" />
+                  <img class="img" src="../assets/img/faces/userlogo.png" />
                 </a>
               </div>
-              <div class="card-body">
-                <h2>{{ element?.nom }}  {{ element?.prenom }}  <span class="badge badge-secondary"> Role {{ element?.roles?.libelle }}</span></h2>
+              <div class="card-body" >
+                <h2>{{ element?.nom }}  {{ element?.prenom }}  <span class="badge badge-secondary" *ngFor="let e of element?.roles">{{ e?.libelle }}</span></h2>
                 <h4 class="card-title"> {{ element?.username }} </h4>
                 <p class="card-description">
                   L'age  :  {{ element?.age }}   |   Le numero de telephone est : {{ element?.tel }}
                 </p>
 
                 <button type="reset" class="btn btn-outline-danger pull-left" *ngIf="element?.id != undefined" (click)="deleteUser(element?.id)">Supprimer</button>
-                <button type="reset" class="btn btn-outline-info pull-left" (click)="editerUser(element.id)" data-toggle="modal" data-target="#updatedoc">Modifier</button>
+                <button type="reset" class="btn btn-outline-info pull-left" (click)="editerUser(element?.id)" data-toggle="modal" data-target="#updateuser">Modifier</button>
 
 
 
-                <div class="modal fade" id="updatedoc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="updateuser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ajouter les modifications</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Ajouter les modifications du User</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
                         <form>
-
                           <div class="form-group">
                             <label for="login"> Nouveau Login</label>
                             <input type="text" class="form-control  rounded-0" id="login"
@@ -159,20 +158,20 @@
                           <div class="form-group">
                             <label for="tel"> Nouveau Numero de Telephone</label>
                             <input type="text" class="form-control  rounded-0" id="tel"
-                                   placeholder="le num de tel" name="tel" [(ngModel)]="user.Tel">
+                                   placeholder="le num de tel" name="tel" [(ngModel)]="user.tel">
                           </div>
 
                           <div class="form-group">
                             <label for="age"> Nouveau Age</label>
                             <input type="text" class="form-control  rounded-0" id="age"
-                                   placeholder="l'age" name="age" [(ngModel)]="user.Age">
+                                   placeholder="l'age" name="age" [(ngModel)]="user.age">
                           </div>
 
                         </form>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" *ngIf="editer" (click)="validerModification()">Save changes</button>
+                        <button type="button"  class="btn btn-primary" *ngIf="editer" (click)="validerModification()">Save changes</button>
                       </div>
                     </div>
                   </div>
@@ -195,3 +194,5 @@
 <!--   Core JS Files   -->
 
 </body>
+
+

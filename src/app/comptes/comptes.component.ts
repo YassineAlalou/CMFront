@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthentificationService} from '../services/authentification.service';
 import {User} from '../classes/user';
+import {Role} from '../classes/role';
 declare var swal: any;
 @Component({
   selector: 'app-comptes',
@@ -16,15 +17,22 @@ export class ComptesComponent implements OnInit {
   public userEditer: User = new User();
   public editer = false;
   private repassword;
+  private username;
+  private  role: Role = new Role();
 
   constructor(public router: Router, private authentificationService: AuthentificationService) {
-    this.repassword = '*********';
+    this.repassword = '';
   }
 
   ngOnInit() {
+
+    this.username = localStorage.getItem('username');
+
+
     this.authentificationService.getAllUsers().subscribe( ( data: any[] ) => {
       this.users = data;
       console.log(this.users);
+      console.log(this.users[2].roles[0].libelle);
     });
     this.authentificationService.getAllRoles().subscribe( ( data: any[] ) => {
       this.roles = data;
@@ -32,6 +40,7 @@ export class ComptesComponent implements OnInit {
     });
 
   }
+
 
   ajouterUser(e) {
     e.preventDefault();
@@ -62,11 +71,12 @@ export class ComptesComponent implements OnInit {
       this.user.id = data.body.id;
       this.user.username = data.body.username;
       this.user.password = data.body.password;
-      this.user.repassword = data.body.repassword;
+      this.user.repassword = data.body.password;
       this.user.nom = data.body.nom;
       this.user.prenom = data.body.prenom;
-      this.user.Tel = data.body.Tel;
-      this.user.Age = data.body.Age;
+      this.user.tel = data.body.tel;
+      this.user.age = data.body.age;
+      console.log(this.user);
     });
   }
 
@@ -84,6 +94,8 @@ export class ComptesComponent implements OnInit {
     this.user = new User();
 
   }
+
+
 
 
 

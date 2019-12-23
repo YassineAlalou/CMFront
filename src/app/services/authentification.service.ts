@@ -102,11 +102,11 @@ export class AuthentificationService {
     return this.http.post(this.url + 'User/registerS' , {
       nom: user.nom,
       prenom: user.prenom,
-      tel: user.Tel,
+      tel: user.tel,
       username: user.username,
       password: user.password,
       repassword : user.repassword,
-      age: user.Age
+      age: user.age
     }, {observe: 'response'});
   }
 
@@ -125,14 +125,15 @@ export class AuthentificationService {
     return this.http.put(this.url + 'User/' + user.id, {
         nom: user.nom,
         prenom: user.prenom,
-        tel: user.Tel,
+        tel: user.tel,
         username: user.username,
         password: user.password,
-        repassword : user.repassword,
-        age: user.Age
+        // repassword : user.password,
+        age: user.age
       },
      { observe: 'response'});
   }
+
 
 
 }
