@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import * as jwt_decode from 'jwt-decode';
-import {User} from '../classes/user';
 
 @Injectable({
   providedIn: 'root'

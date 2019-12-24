@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthentificationService} from '../services/authentification.service';
 import {User} from '../classes/user';
-import {Role} from '../classes/role';
 
 @Component({
   selector: 'app-secretairehome',
@@ -14,6 +13,7 @@ export class SecretairehomeComponent implements OnInit {
   users;
   public user: User = new User();
   private repassword;
+
   public patients = new Array();
 
   constructor(public router: Router, private authentificationService: AuthentificationService) {
@@ -51,13 +51,12 @@ export class SecretairehomeComponent implements OnInit {
       this.authentificationService.getAllUsers().subscribe((data: any[]) => {
         this.users = data;
         console.log(data);
+
       });
 
     });
 
   }
-
-
 }
 
 

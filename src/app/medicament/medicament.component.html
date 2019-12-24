@@ -1,0 +1,170 @@
+<body class="">
+<app-sidebar></app-sidebar>
+<div class="wrapper ">
+  <div class="main-panel">
+    <!-- Navbar -->
+    <app-header></app-header>
+    <!-- End Navbar -->
+    <div class="content">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">Ajouter un Medicament</h4>
+              <p class="card-category">Svp entrer les informations du Medicament</p>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="row">
+                  <div class="col-md-5">
+
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Libelle</label>
+                      <input type="text" name="libelle" id="libelle" class="form-control" [(ngModel)]="medicament.libelle">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Famille</label>
+                      <input type="text" name="famille" id="famille" class="form-control"[(ngModel)]="medicament.famille">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Quantite</label>
+                      <input type="text" name="quantite" id="quantite" class="form-control" [(ngModel)]="medicament.quantite">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Date d'expiration</label>
+                      <input type="date" name="dateex" id="dateex" class="form-control" [(ngModel)]="medicament.dateex">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                  </div>
+                </div>
+                <p></p>
+                <button type="submit" class="btn btn-outline-primary pull-left" (click)="ajouterMedicament($event)">Ajouter</button>
+                <button type="reset" class="btn btn-outline-warning pull-left">Annuler</button>
+                <div class="clearfix"></div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informations d'un profil -->
+
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title ">Liste des medicaments</h4>
+                <p class="card-category"> Here is a subtitle for this table</p>
+              </div>
+              <div class="card-body" *ngIf="medicaments" >
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                    <th>Libelle</th>
+                    <th>Famille</th>
+                    <th>Quantite</th>
+                    <th>Date d'expiration</th>
+                    <th>Actions</th>
+                    <tbody *ngFor="let element of medicaments">
+                    <tr>
+                      <td>{{element?.libelle}}</td>
+                      <td>{{element?.famille}}</td>
+                      <td>{{element?.quantite}}</td>
+                      <td class="text-primary">
+                        {{element?.dateex}}
+                      </td>
+                      <td>
+                        <button type="button" rel="tooltip" title="Modifier medicament" (click)="editerMedicament(element?.id)" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#updatemedicament">
+                          <i class="material-icons">edit</i>
+                        </button>
+                        <button type="button" rel="tooltip" title="Supprimer le compte" class="btn btn-danger btn-link btn-sm" *ngIf="element?.id != undefined" (click)="deleteMedicament(element?.id)">
+                          <i class="material-icons">close</i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tbody>
+                    </tbody>
+                  </table>
+
+                  <div class="modal fade" id="updatemedicament" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Ajouter les modifications du Medicament</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-group">
+                              <label for="libelle"> Nouveau Libelle</label>
+                              <input type="text" class="form-control  rounded-0" id="libelle"
+                                     placeholder="Libelle" name="libelle" [(ngModel)]="medicament.libelle">
+                            </div>
+
+                            <div class="form-group">
+                              <label for="famille">Nouvelle Famille</label>
+                              <input type="text" class="form-control rounded-0" name="famille" id="famille"
+                                     placeholder="Password" [(ngModel)]="medicament.famille">
+                            </div>
+
+                            <div class="form-group">
+                              <label for="quantite"> Nouvelle Quantite</label>
+                              <input type="number" class="form-control  rounded-0" id="quantite"
+                                     placeholder="la quantite du medicament" name="quantite" [(ngModel)]="medicament.quantite">
+                            </div>
+
+                            <div class="form-group">
+                              <label for="dateex"> Nouvelle Date d'expiration</label>
+                              <input type="date" class="form-control  rounded-0" id="dateex"
+                                     placeholder="le nom du document" name="dateex" [(ngModel)]="medicament.dateex">
+                            </div>
+
+
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button"  class="btn btn-primary" *ngIf="editer" (click)="validerModification()">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- end infos -->
+      </div>
+
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
+
+<!--   Core JS Files   -->
+
+</body>
+
+
+

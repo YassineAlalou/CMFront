@@ -17,6 +17,7 @@ import { SecretairehomeComponent } from './secretairehome/secretairehome.compone
 import { Sidebar2Component } from './sidebar2/sidebar2.component';
 import { PatienthomeComponent } from './patienthome/patienthome.component';
 import { Sidebar3Component } from './sidebar3/sidebar3.component';
+import { MedicamentComponent } from './medicament/medicament.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { Sidebar3Component } from './sidebar3/sidebar3.component';
     SecretairehomeComponent,
     Sidebar2Component,
     PatienthomeComponent,
-    Sidebar3Component
+    Sidebar3Component,
+    MedicamentComponent
   ],
   imports: [
     BrowserModule,

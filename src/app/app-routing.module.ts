@@ -9,6 +9,7 @@ import {SecretaireGuard} from './guards/secretaire.guard';
 import {SecretairehomeComponent} from './secretairehome/secretairehome.component';
 import {PatienthomeComponent} from './patienthome/patienthome.component';
 import {PatientGuard} from './guards/patient.guard';
+import {MedicamentComponent} from './medicament/medicament.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'comptes',
     component: ComptesComponent,
+    canActivate: [AuthentifGuard]
+  },
+  {
+    path: 'medicament',
+    component: MedicamentComponent,
     canActivate: [AuthentifGuard]
   },
   {
