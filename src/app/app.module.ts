@@ -18,6 +18,9 @@ import { Sidebar2Component } from './sidebar2/sidebar2.component';
 import { PatienthomeComponent } from './patienthome/patienthome.component';
 import { Sidebar3Component } from './sidebar3/sidebar3.component';
 import { MedicamentComponent } from './medicament/medicament.component';
+import { RendezvousComponent } from './rendezvous/rendezvous.component';
+import { FullCalendarModule} from '@fullcalendar/angular';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { MedicamentComponent } from './medicament/medicament.component';
     Sidebar2Component,
     PatienthomeComponent,
     Sidebar3Component,
-    MedicamentComponent
+    MedicamentComponent,
+    RendezvousComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import { MedicamentComponent } from './medicament/medicament.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import {AuthentificationService} from '../services/authentification.service';
 import {User} from '../classes/user';
 import {Role} from '../classes/role';
 declare var swal: any;
+declare var $:any;
 @Component({
   selector: 'app-comptes',
   templateUrl: './comptes.component.html',
@@ -92,7 +93,7 @@ export class ComptesComponent implements OnInit {
 
     this.editer = false;
     this.user = new User();
-
+  $('body').removeClass('modal-open');
   }
 
 

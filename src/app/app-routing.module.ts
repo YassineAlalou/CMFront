@@ -10,6 +10,7 @@ import {SecretairehomeComponent} from './secretairehome/secretairehome.component
 import {PatienthomeComponent} from './patienthome/patienthome.component';
 import {PatientGuard} from './guards/patient.guard';
 import {MedicamentComponent} from './medicament/medicament.component';
+import {RendezvousComponent} from './rendezvous/rendezvous.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,11 @@ const routes: Routes = [
   {
     path: 'patienthome',
     component: PatienthomeComponent,
+    canActivate: [PatientGuard]
+  },
+  {
+    path: 'rendezvous',
+    component: RendezvousComponent,
     canActivate: [PatientGuard]
   },
 ];
