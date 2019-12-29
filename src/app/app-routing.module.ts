@@ -9,6 +9,9 @@ import {SecretaireGuard} from './guards/secretaire.guard';
 import {SecretairehomeComponent} from './secretairehome/secretairehome.component';
 import {PatienthomeComponent} from './patienthome/patienthome.component';
 import {PatientGuard} from './guards/patient.guard';
+import {Typeconsultation} from './classes/typeconsultation';
+import {TypeConsultationComponent} from './type-consultation/type-consultation.component';
+import {ConsultationComponent} from './consultation/consultation.component';
 import {MedicamentComponent} from './medicament/medicament.component';
 import {RendezvousComponent} from './rendezvous/rendezvous.component';
 
@@ -20,7 +23,15 @@ const routes: Routes = [
   {
     path: 'adminhome',
     component: AdminhomeComponent,
-    canActivate: [AuthentifGuard]
+    canActivate: [AuthentifGuard],
+  },
+  {
+    path: 'type',
+    component: TypeConsultationComponent
+  },
+  {
+    path: 'consultation',
+    component: ConsultationComponent
   },
   {
     path: 'comptes',

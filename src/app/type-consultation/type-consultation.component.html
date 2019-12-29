@@ -1,0 +1,110 @@
+<body class="">
+<app-sidebar></app-sidebar>
+<div class="wrapper ">
+  <div class="main-panel">
+    <!-- Navbar -->
+    <app-header></app-header>
+    <!-- End Navbar -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">Ajouter un Type de Consultation</h4>
+                <p class="card-category">Svp entrer les information</p>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-5">
+
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Type Consultation</label>
+                        <input type="text" name="type" id="type" class="form-control" [(ngModel)]="type.libelle">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+
+                    </div>
+                  </div>
+                  <p></p>
+                  <button type="submit" class="btn btn-outline-primary pull-left" (click)="ajouterType($event)">Ajouter</button>
+                  <button type="reset" class="btn btn-outline-warning pull-left">Annuler</button>
+                  <div class="clearfix"></div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!-- Informations d'un profil -->
+          <div class="card-body" *ngIf="types" >
+            <div class="col-md-12" >
+              <div class="card card-profile"*ngFor="let element of types">
+                <div class="card-avatar">
+                  <a href="#pablo">
+                    <img class="img" src="../assets/img/faces/userlogo.png" />
+                  </a>
+                </div>
+                <div class="card-body" >
+                  <h2>{{ element?.libelle }}  <span class="badge badge-secondary"> </span></h2>
+
+
+                  <button type="reset" class="btn btn-outline-danger pull-left" *ngIf="element?.id != undefined" (click)="deleteType(element?.id)">Supprimer</button>
+                  <button type="reset" class="btn btn-outline-info pull-left" (click)="editerType(element?.id)" data-toggle="modal" data-target="#updateuser">Modifier</button>
+
+
+
+                  <div class="modal fade" id="updateuser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Ajouter les modifications du User</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-group">
+                              <label for="login"> Nouveau Login</label>
+                              <input type="text" class="form-control  rounded-0" id="login"
+                                     placeholder="Username" name="login" [(ngModel)]="type.libelle">
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button"  class="btn btn-primary" *ngIf="editer" (click)="validerModification()">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- end infos -->
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
+
+<!--   Core JS Files   -->
+
+</body>
+
+
