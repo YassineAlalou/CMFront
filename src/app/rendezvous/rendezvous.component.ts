@@ -13,26 +13,29 @@ declare var swal: any;
 })
 export class RendezvousComponent implements OnInit {
 
-  title = 'Calendar' ;
-  calendarPlugins = [dayGridPlugin] ;
-  CalendarEvents: any[] = [];
 
   public rendezvouss;
+  public mesrdv = new Array();
   public rendezvous: Rendezvous = new Rendezvous();
-  public clientEditer: Rendezvous = new Rendezvous();
-  public editer = false;
   public users;
-  public username;
-
+  public  username;
+  public dt = new Date().toISOString().slice(0, 10);
 
 
   constructor(private rendezvousService: RendezvousService, private authentificationService: AuthentificationService) { }
 
+
   ngOnInit() {
+    this.username = localStorage.getItem('username');
     this.rendezvousService.getAllRendezvous().subscribe((data: any[]) => {
       this.rendezvouss = data;
-      this.CalendarEvents = data;
       console.log(this.rendezvouss);
+      for (const val of this.rendezvouss) {
+        if (val.user.username === this.username) {
+          this.mesrdv.push(val);
+        }
+      }
+      console.log(this.mesrdv);
     });
     this.authentificationService.getAllUsers().subscribe((data: any[]) => {
       this.users = data;
@@ -41,6 +44,9 @@ export class RendezvousComponent implements OnInit {
 
   ajouterRendezvous(e) {
     e.preventDefault();
+    console.log(this.rendezvous.dater);
+    console.log(this.dt);
+    if (this.rendezvous.dater > this.dt) {
     this.username = localStorage.getItem('username');
     this.rendezvousService.ajouterRendezvous(this.rendezvous , this.username).subscribe(( data ) => {
         console.log(data);
@@ -51,7 +57,10 @@ export class RendezvousComponent implements OnInit {
           this.rendezvouss = data;
         });
       });
+    } else {swal('Date invalide', '', 'error'); }
+
   }
+
 
 
 

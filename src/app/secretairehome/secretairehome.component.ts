@@ -21,39 +21,43 @@ export class SecretairehomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authentificationService.getAllUsers().subscribe( ( data: any[] ) => {
-      this.users = data;
-      for (const val of this.users) {
-          if (val.roles.length === 0) {
-          console.log(val);
-          this.patients.push(val);
-      }
-      }
-      console.log(this.patients);
-    });
-
-    this.authentificationService.getAllUsers().subscribe( ( data: any[] ) => {
-      this.users = data;
-      for (const val of this.users) {
-        for (const val2 of val.roles) {
-        if (val2.libelle === 'PATIENT') {
-          console.log(val);
-          this.patients.push(val);
-        }
-        }
-      }
-      console.log(this.patients);
-    });
+  this.init();
   }
 
   Activer(username) {
     this.authentificationService.Activer(username).subscribe((data) => {
-      this.authentificationService.getAllUsers().subscribe((data: any[]) => {
-        this.users = data;
-        console.log(data);
+      this.init();
 
+    });
+
+
+  }
+
+
+  init() {
+    this.patients = new Array();
+    this.authentificationService.getAllUsers().subscribe( ( data: any[] ) => {
+     // this.users = data;
+      for (const val of data) {
+        if (val.roles.length === 0) {
+
+          this.patients.push(val);
+        }
+      }
+      this.authentificationService.getAllUsers().subscribe( ( data: any[] ) => {
+
+        for (const val of data) {
+          for (const val2 of val.roles) {
+            if (val2.libelle === 'PATIENT') {
+              console.log(val);
+              this.patients.push(val);
+            }
+          }
+        }
+        console.log(this.patients);
       });
 
+      console.log(this.patients);
     });
 
   }

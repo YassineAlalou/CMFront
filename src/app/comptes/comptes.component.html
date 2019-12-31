@@ -6,7 +6,7 @@
     <app-header></app-header>
     <!-- End Navbar -->
     <div class="content">
-      <div class="container-fluid">
+
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -98,13 +98,13 @@
           <div class="col-md-12" >
             <div class="card card-profile"*ngFor="let element of users">
               <div class="card-avatar">
-                <a href="#pablo">
+                <a>
                   <img class="img" src="../assets/img/faces/userlogo.png" />
                 </a>
               </div>
               <div class="card-body" >
                 <h2>{{ element?.nom }}  {{ element?.prenom }}  <span class="badge badge-secondary" *ngFor="let e of element?.roles">{{ e?.libelle }}</span></h2>
-                <h4 class="card-title"> {{ element?.username }} </h4>
+                <h4 class="card-title">Username : {{ element?.username }} </h4>
                 <p class="card-description">
                   L'age  :  {{ element?.age }}   |   Le numero de telephone est : {{ element?.tel }}
                 </p>
@@ -189,7 +189,7 @@
     </div>
     <app-footer></app-footer>
   </div>
-</div>
+
 
 <!--   Core JS Files   -->
 
