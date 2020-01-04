@@ -29,10 +29,7 @@ export class SecretairehomeComponent implements OnInit {
       this.init();
 
     });
-
-
   }
-
 
   init() {
     this.patients = new Array();

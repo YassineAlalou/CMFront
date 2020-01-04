@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {MedicamentService} from '../services/medicament.service';
 import {Medicament} from '../classes/medicament';
-import {User} from '../classes/user';
 declare var swal: any;
 
 @Component({
@@ -15,6 +14,8 @@ export class MedicamentComponent implements OnInit {
   public medicaments;
   public medicament: Medicament = new Medicament();
   private editer = false;
+  public dat = new Date().toISOString().slice(0, 10);
+
 
   constructor(public router: Router, private medicamentService: MedicamentService) { }
 
@@ -22,7 +23,13 @@ export class MedicamentComponent implements OnInit {
     this.medicamentService.getAllMedicaments().subscribe( ( data: any[] ) => {
       this.medicaments = data;
       console.log(this.medicaments);
+      for (const val of this.medicaments) {
+        if (this.dat <= val.dateex) {
+          swal(val.libelle + '  Expire ', '', 'error');
+        }
+      }
     });
+    console.log(this.dat);
   }
 
   ajouterMedicament(e) {

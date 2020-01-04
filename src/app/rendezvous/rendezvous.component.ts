@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
 import {RendezvousService} from '../services/rendezvous.service';
 import {AuthentificationService} from '../services/authentification.service';
 import {Rendezvous} from '../classes/rendezvous';
@@ -18,6 +17,7 @@ export class RendezvousComponent implements OnInit {
   public mesrdv = new Array();
   public rendezvous: Rendezvous = new Rendezvous();
   public users;
+  public editer;
   public  username;
   public dt = new Date().toISOString().slice(0, 10);
 
@@ -26,6 +26,40 @@ export class RendezvousComponent implements OnInit {
 
 
   ngOnInit() {
+    this.Init();
+  }
+
+  ajouterRendezvous(e) {
+    e.preventDefault();
+    console.log(this.rendezvous.dater);
+    console.log(this.dt);
+    if (this.rendezvous.dater > this.dt) {
+    this.username = localStorage.getItem('username');
+    this.rendezvousService.ajouterRendezvous(this.rendezvous , this.username).subscribe(( data ) => {
+        console.log(data);
+        this.rendezvouss.push(this.rendezvous);
+        this.rendezvous = new Rendezvous();
+        swal('rendez-vous ajouté!', '', 'success');
+        this.rendezvousService.getAllRendezvous().subscribe( ( data: any[] ) => {
+          this.mesrdv = data;
+        });
+      });
+    } else {swal('Date invalide', '', 'error'); }
+    // this.Init();
+  }
+
+  deleteRendezvous(id: any) {
+    this.rendezvousService.deleteRendezvous(id).subscribe(( data) => {
+      swal('rendez-vous Supprimé!', '', 'success');
+      this.rendezvousService.getAllRendezvous().subscribe( ( data: any[] ) => {
+         this.mesrdv = data;
+      });
+    });
+
+  }
+
+
+  Init() {
     this.username = localStorage.getItem('username');
     this.rendezvousService.getAllRendezvous().subscribe((data: any[]) => {
       this.rendezvouss = data;
@@ -42,23 +76,30 @@ export class RendezvousComponent implements OnInit {
     });
   }
 
-  ajouterRendezvous(e) {
-    e.preventDefault();
-    console.log(this.rendezvous.dater);
-    console.log(this.dt);
-    if (this.rendezvous.dater > this.dt) {
-    this.username = localStorage.getItem('username');
-    this.rendezvousService.ajouterRendezvous(this.rendezvous , this.username).subscribe(( data ) => {
-        console.log(data);
-        this.rendezvouss.push(this.rendezvous);
-        this.rendezvous = new Rendezvous();
-        swal('rendez-vous ajouté!', '', 'success');
-        this.rendezvousService.getAllRendezvous().subscribe( (data: any[] ) => {
-          this.rendezvouss = data;
-        });
-      });
-    } else {swal('Date invalide', '', 'error'); }
+  editerRendezvous(id) {
+    this.editer = true;
+    this.rendezvousService.getRendezvous(id).subscribe((data: any) => {
+      this.rendezvous.id = data.body.id;
+      this.rendezvous.dater = data.body.dater;
+      this.rendezvous.motif = data.body.motif;
+      this.rendezvous.user = data.body.user;
+      console.log(this.mesrdv);
+    });
 
+  }
+
+  validerModification() {
+    console.log(this.rendezvous);
+    this.rendezvousService.updateRendezvous(this.rendezvous).subscribe((data) => {
+      this.rendezvousService.getAllRendezvous().subscribe((data: any[]) => {
+        this.mesrdv = data;
+        console.log(this.mesrdv);
+      });
+
+    });
+
+    this.editer = false;
+    this.rendezvous = new Rendezvous();
   }
 
 

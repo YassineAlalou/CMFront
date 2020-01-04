@@ -14,7 +14,7 @@ export class RendezvousService {
 
   getAllRendezvous(): Observable<any[]> {
     return this.http.get<any[]>(this.url + 'rendezvous/all');
-  }
+}
 
   ajouterRendezvous(rendezvous , un) {
     return this.http.post(this.url + 'rendezvous/' + un, {
@@ -25,11 +25,22 @@ export class RendezvousService {
 
   deleteRendezvous(id) {
     console.log(id);
-    return this.http.delete(this.url + '/' + id, { observe: 'response'});
+    return this.http.delete(this.url + 'rendezvous/' + id, { observe: 'response'});
   }
 
   getRendezvous(id) {
-    return this.http.get(this.url + '/' + id , { observe: 'response'});
+    return this.http.get(this.url + 'rendezvous/' + id , { observe: 'response'});
+  }
+
+  updateRendezvous(rdv) {
+    console.log('Rendez-vous update', rdv);
+    return this.http.put(this.url + 'rendezvous/' + rdv.id, {
+        id: rdv.id,
+        dater: rdv.dater,
+        motif: rdv.motif,
+        user: rdv.user
+      },
+      { observe: 'response'});
   }
 
 

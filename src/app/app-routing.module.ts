@@ -14,6 +14,7 @@ import {TypeConsultationComponent} from './type-consultation/type-consultation.c
 import {ConsultationComponent} from './consultation/consultation.component';
 import {MedicamentComponent} from './medicament/medicament.component';
 import {RendezvousComponent} from './rendezvous/rendezvous.component';
+import {MedecinComponent} from './medecin/medecin.component';
 
 
 const routes: Routes = [
@@ -27,11 +28,18 @@ const routes: Routes = [
   },
   {
     path: 'type',
-    component: TypeConsultationComponent
+    component: TypeConsultationComponent,
+    canActivate: [AuthentifGuard]
   },
   {
     path: 'consultation',
-    component: ConsultationComponent
+    component: ConsultationComponent,
+    canActivate: [AuthentifGuard]
+  },
+  {
+    path: 'medecin',
+    component: MedecinComponent,
+    canActivate: [AuthentifGuard]
   },
   {
     path: 'comptes',

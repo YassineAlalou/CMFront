@@ -36,7 +36,7 @@ export class ConsultationService {
     return this.http.delete(this.url + '/' + id, {observe: 'response'});
   }
 
-  upadte(cons){
+  upadte(cons) {
     return this.http.put(this.url + '/' + cons.id, {
       id: cons.id,
       dateC: cons.dateC,

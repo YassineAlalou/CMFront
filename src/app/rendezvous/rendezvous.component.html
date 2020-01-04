@@ -9,7 +9,6 @@
 
       <br>
 
-      <button type="submit" class="btn btn-outline-primary pull-left" data-toggle="modal" data-target="#addrdv">Ajouter un rendez-vous</button>
 
       <div class="modal fade" id="addrdv" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -35,8 +34,6 @@
                          placeholder="motif" [(ngModel)]="rendezvous.motif">
                 </div>
 
-
-
               </form>
             </div>
             <div class="modal-footer">
@@ -47,28 +44,87 @@
         </div>
       </div>
 
-
-
-        <div class="card" *ngFor="let element of mesrdv">
-          <div class="card-header" >
-            {{element?.user.nom}}   {{element?.user.prenom}}
+      <div class="col-md-12" >
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Historique de mes rendez-vous <button type="submit" class="btn btn-outline-warning pull-right" data-toggle="modal" data-target="#addrdv">Ajouter un rendez-vous</button></h4>
+            <p class="card-category">
+            </p>
           </div>
           <div class="card-body">
-            <h5 class="card-title">Date du rendez-vous : {{element?.dater}}</h5>
-            <p class="card-text">Le motif :  {{element?.motif}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                <th>Le motif</th>
+                <th>Date du rendez-vous</th>
+                <th>Actions</th>
+                <tbody *ngFor="let element of mesrdv">
+                <tr>
+                  <td>{{element?.motif}}</td>
+                  <td class="text-primary">
+                    {{element?.dater}}
+                  </td>
+                  <td>
+                    <button type="button" rel="tooltip" title="Modifier rendez-vous" (click)="editerRendezvous(element?.id)" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#updaterdv">
+                      <i class="material-icons">edit</i>
+                    </button>
+                    <button type="button" rel="tooltip" title="Supprimer le compte" class="btn btn-danger btn-link btn-sm" *ngIf="element?.id != undefined" (click)="deleteRendezvous(element?.id)">
+                      <i class="material-icons">close</i>
+                    </button>
+                  </td>
+                </tr>
+                <tbody>
+                </tbody>
+              </table>
+
+            </div>
           </div>
         </div>
+      </div>
 
 
 
+      <div class="modal fade" id="updaterdv" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modifier un Rendez-vous</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
 
+                <div class="form-group">
+                  <label for="dater">Date de Reservation </label>
+                  <input type="date" class="form-control  rounded-0" id="dater"
+                         placeholder="Date reservation" name="dater" [(ngModel)]="rendezvous.dater">
+                </div>
+
+                <div class="form-group">
+                  <label for="motif">Le Motif</label>
+                  <input type="text" class="form-control rounded-0" name="motif" id="motif"
+                         placeholder="motif" [(ngModel)]="rendezvous.motif">
+                </div>
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button"  class="btn btn-primary" *ngIf="editer" (click)="validerModification()">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
     <app-footer></app-footer>
   </div>
 </div>
 
-<!--   Core JS Files   -->
 
 </body>
+
+
+

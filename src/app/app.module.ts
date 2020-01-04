@@ -21,8 +21,8 @@ import { TypeConsultationComponent } from './type-consultation/type-consultation
 import { ConsultationComponent } from './consultation/consultation.component';
 import { MedicamentComponent } from './medicament/medicament.component';
 import { RendezvousComponent } from './rendezvous/rendezvous.component';
-// @ts-ignore
-import { FullCalendarModule} from '@fullcalendar/angular';
+import { SchedulerModule } from '@progress/kendo-angular-scheduler';
+import { MedecinComponent } from './medecin/medecin.component';
 
 
 @NgModule({
@@ -43,7 +43,8 @@ import { FullCalendarModule} from '@fullcalendar/angular';
     RendezvousComponent,
     Sidebar3Component,
     TypeConsultationComponent,
-    ConsultationComponent
+    ConsultationComponent,
+    MedecinComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +53,7 @@ import { FullCalendarModule} from '@fullcalendar/angular';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FullCalendarModule
+    SchedulerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
