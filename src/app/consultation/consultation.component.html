@@ -1,201 +1,3 @@
-<!--<body class="">-->
-<!--<app-sidebar></app-sidebar>-->
-<!--<div class="wrapper ">-->
-<!--  <div class="main-panel">-->
-<!--    &lt;!&ndash; Navbar &ndash;&gt;-->
-<!--    <app-header></app-header>-->
-<!--    &lt;!&ndash; End Navbar &ndash;&gt;-->
-<!--    <div class="content">-->
-<!--      <div class="container-fluid">-->
-<!--        <div class="row">-->
-<!--          <div class="col-md-12">-->
-<!--            <div class="card">-->
-<!--              <div class="card-header card-header-primary">-->
-<!--                <h4 class="card-title">Ajouter une conultation</h4>-->
-<!--                <p class="card-category">Svp entrer les information</p>-->
-<!--              </div>-->
-<!--              <div class="card-body">-->
-<!--                <form>-->
-<!--                  <div class="row">-->
-<!--                    <div class="col-md-5">-->
-
-<!--                    </div>-->
-<!--                    <div class="col-md-12">-->
-<!--                      <div class="form-group">-->
-<!--                        <label class="bmd-label-floating">Date Consultation</label>-->
-<!--                        <input type="date" name="date" id="date" class="form-control" [(ngModel)]="con.dateC">-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="row">-->
-<!--                    <div class="col-md-12">-->
-<!--                      <div class="form-group">-->
-<!--                        <label class="bmd-label-floating">Motif</label>-->
-<!--                        <input type="text" name="motif" id="motif" class="form-control" [(ngModel)]="con.motif">-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="row">-->
-<!--                    <div class="col-md-12">-->
-<!--                      <div class="form-group">-->
-<!--                        <label class="bmd-label-floating">Diagnostic</label>-->
-<!--                        <input type="text" name="Diagnostic" id="Diagnostic" class="form-control"-->
-<!--                               [(ngModel)]="con.Diagnostic">-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                  <div class="row">-->
-<!--                    <div class="col-md-12">-->
-<!--                      <div class="form-group">-->
-<!--                        <label class="bmd-label-floating">Prix</label>-->
-<!--                        <input type="number" name="price" id="price" class="form-control" [(ngModel)]="con.price">-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-
-<!--                  <div class="form-group">-->
-<!--                    <label class="bmd-label-floating">Libelle</label>-->
-<!--                    <select class="form-control" id="type" name="type" [(ngModel)]="con.typeConsultation">-->
-<!--                      <option *ngFor="let tp of types" [ngValue]="tp">{{tp.libelle}}</option>-->
-<!--                    </select>-->
-<!--                  </div>-->
-
-<!--                  <p></p>-->
-<!--                  <button type="submit" class="btn btn-outline-primary pull-left" [hidden]="editer" (click)="ajouterCons($event)">-->
-<!--                    Ajouter-->
-<!--                  </button>-->
-<!--                  <button type="submit" class="btn btn-outline-warning pull-left" (click)="inistaliser()" >Annuler</button>-->
-<!--                  <button type="submit" class="btn btn-outline-primary pull-left" *ngIf="editer" (click)="validerModification()">-->
-<!--                    Valider Modification-->
-<!--                  </button>-->
-<!--                  <div class="clearfix"></div>-->
-<!--                </form>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-
-
-<!--          &lt;!&ndash; Informations d'un profil &ndash;&gt;-->
-<!--          <div class="content">-->
-<!--            <div class="container-fluid">-->
-<!--              <div class="row">-->
-<!--                <div class="col-md-12">-->
-<!--                  <div class="card">-->
-<!--                    <div class="card-header card-header-primary">-->
-<!--                      <h4 class="card-title ">Simple Table</h4>-->
-<!--                      <p class="card-category"> Here is a subtitle for this table</p>-->
-<!--                    </div>-->
-<!--                    <div class="card-body">-->
-<!--                      <div class="table-responsive">-->
-<!--                        <table class="table">-->
-<!--                          <thead class=" text-primary">-->
-<!--                          <tr>-->
-<!--                            <th>Motif</th>-->
-<!--                            <th>Diagnostic</th>-->
-<!--                            <th>Date Consultation</th>-->
-<!--                            <th>Prix</th>-->
-<!--                            <th>Type Consultation</th>-->
-<!--                            <th>Action</th>-->
-<!--                          </tr>-->
-<!--                          </thead>-->
-
-<!--                          <tbody *ngIf="cons">-->
-<!--                          <tbody *ngFor="let element of cons">-->
-<!--                          <td>{{ element?.motif }}</td>-->
-<!--                          <td> {{element?.diagnostic}} </td>-->
-<!--                          <td> {{element?.dateC}} </td>-->
-<!--                          <td> {{element?.price}} </td>-->
-<!--                          <td> {{element?.typeConsultation?.libelle}} </td>-->
-<!--                          <td>-->
-<!--                            &lt;!&ndash;                            <button class="btn btn-small btn-info" (click)="editerRegion(element.id)"> Editer </button>&ndash;&gt;-->
-<!--                            &lt;!&ndash;                            <button class="btn btn-small btn-danger" *ngIf="element.id != undefined" (click)="deleteRegion(element.id)"> Supprimer</button>&ndash;&gt;-->
-<!--                            <button type="button" rel="tooltip" title="Edit Task"-->
-<!--                                    class="btn btn-primary btn-link btn-sm" (click)="editConsultation(element.id)">-->
-<!--                              <i class="material-icons">edit</i>-->
-<!--                            </button>-->
-<!--                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm"-->
-<!--                                    *ngIf="element.id != undefined" (click)="delete(element.id)">-->
-<!--                              <i class="material-icons">close</i>-->
-<!--                            </button>-->
-<!--                          </td>-->
-<!--                          </tbody>-->
-<!--                        </table>-->
-
-<!--&lt;!&ndash;                        modal start&ndash;&gt;-->
-<!--                        <div class="modal fade" id="updateconsultation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--                          <div class="modal-dialog" role="document">-->
-<!--                            <div class="modal-content">-->
-<!--                              <div class="modal-header">-->
-<!--                                <h5 class="modal-title" id="exampleModalLabel">Ajouter les modifications du Consultation</h5>-->
-<!--                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                                  <span aria-hidden="true">&times;</span>-->
-<!--                                </button>-->
-<!--                              </div>-->
-<!--                              <div class="modal-body">-->
-<!--                                <form>-->
-<!--                                  <div class="form-group">-->
-<!--                                    <label for="motif"> Nouveau Motif</label>-->
-<!--                                    <input type="text" class="form-control  rounded-0" id="motif"-->
-<!--                                           placeholder="Libelle" name="libelle" [(ngModel)]="con.motif">-->
-<!--                                  </div>-->
-
-<!--                                  <div class="form-group">-->
-<!--                                    <label for="Diagnostic">Nouveau Diagnostic</label>-->
-<!--                                    <input type="text" class="form-control rounded-0" name="famille" id="Diagnostic"-->
-<!--                                           placeholder="Diagnostic" [(ngModel)]="con.Diagnostic">-->
-<!--                                  </div>-->
-
-<!--                                  <div class="form-group">-->
-<!--                                    <label for="price"> Nouvelle Quantite</label>-->
-<!--                                    <input type="number" class="form-control  rounded-0" id="price"-->
-<!--                                           placeholder="le prix " name="quantite" [(ngModel)]="con.price">-->
-<!--                                  </div>-->
-
-<!--                                  <div class="form-group">-->
-<!--                                    <label for="dateC"> Nouvelle Date d'expiration</label>-->
-<!--                                    <input type="date" class="form-control  rounded-0" id="dateC"-->
-<!--                                           placeholder="le nom du document" name="dateex" [(ngModel)]="con.dateC">-->
-<!--                                  </div>-->
-<!--                                  <div class="form-group">-->
-<!--                                    <label for="typea"> Nouveau Type</label>-->
-<!--                                    <select class="form-control" id="typea" name="type" [(ngModel)]="con.typeConsultation">-->
-<!--                                      <option *ngFor="let tp of types" [ngValue]="tp">{{tp.libelle}}</option>-->
-<!--                                    </select>-->
-<!--                                  </div>-->
-
-
-<!--                                </form>-->
-<!--                              </div>-->
-<!--                              <div class="modal-footer">-->
-<!--                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--                                <button type="button"  class="btn btn-primary" *ngIf="editer" (click)="validerModification()">Save changes</button>-->
-<!--                              </div>-->
-<!--                            </div>-->
-<!--                          </div>-->
-<!--                        </div>-->
-<!--&lt;!&ndash;                        modal ends&ndash;&gt;-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          &lt;!&ndash;     modal start     /- &ndash;&gt;-->
-
-<!--        &lt;!&ndash;     modal ends     &ndash;&gt;-->
-<!--        &lt;!&ndash; end infos &ndash;&gt;-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <app-footer></app-footer>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--&lt;!&ndash;   Core JS Files   &ndash;&gt;-->
-
-<!--</body>-->
-
 
 <body class="">
 <app-sidebar></app-sidebar>
@@ -204,52 +6,53 @@
     <!-- Navbar -->
     <app-header></app-header>
     <!-- End Navbar -->
+
     <div class="content">
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <h4 class="card-title">Ajouter une Consultation</h4>
-              <p class="card-category">Svp entrer les informations du Consultation</p>
-            </div>
-            <div class="card-body">
-              <form>
-                <div class="row">
-                  <div class="col-md-5">
 
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Motif</label>
-                      <input type="text" name="motif" id="motif" class="form-control" [(ngModel)]="con.motif">
-                    </div>
-                  </div>
+      <div class="tim-typo">
+        <p class="text-primary">
+          Trouver les rendez-vous par date :
+        </p>
+      </div>
+
+      <div class="input-group no-border">
+        <input type="date" value="" class="form-control" placeholder="Search..." [(ngModel)]="con.dater" >
+        <button type="submit" class="btn btn-white btn-round btn-just-icon" (click)="FindByDater(con.dater)">
+          <i class="material-icons">search</i>
+          <div class="ripple-container"></div>
+        </button>
+      </div>
+
+      <ul class="list-group" *ngFor="let element of rdvdater">
+        <li class="list-group-item active"><h6>{{element?.user?.nom}} {{element?.user?.prenom}}</h6> </li>
+        <li class="list-group-item">Le Motif : {{element?.motif}}</li>
+        <li class="list-group-item">Le Diagnostic : {{element?.diagnostic}}</li>
+        <li class="list-group-item">Le Prix : {{element?.price}}</li>
+        <li class="list-group-item">Le type : {{element?.typeConsultation?.libelle}}</li>
+        <li class="list-group-item"><button type="submit" (click)="editConsultation(element?.id)" class="btn btn-outline-primary pull-left" data-toggle="modal" data-target="#diagnostica">Add Diagnostic</button>
+          <button type="submit" class="btn btn-outline-danger pull-left" *ngIf="element?.id != undefined"
+                  (click)="delete(element?.id)" >Supprimer</button>
+        </li>
+      </ul>
+
+      <div class="modal fade" id="diagnostica" tabindex="-1" role="dialog"
+           aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form>
+
+                <div class="form-group">
+                  <label for="diagnostic">Nouveau Diagnostic</label>
+                  <input type="text" class="form-control  rounded-0" id="diagnostic"
+                         placeholder="Diagnostic " name="diagnostic" [(ngModel)]="con.diagnostic">
                 </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Diagnostic</label>
-                      <input type="text" name="Diagnostic" id="Diagnostic" class="form-control"
-                             [(ngModel)]="con.Diagnostic">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Prix</label>
-                      <input type="number" name="price" id="price" class="form-control" [(ngModel)]="con.price">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="bmd-label-floating"></label>
-                      <input type="date" name="dateC" id="dateC" class="form-control" [(ngModel)]="con.dateC">
-                    </div>
-                  </div>
+
+                <div class="form-group">
+                  <label for="price"> Nouveau Prix</label>
+                  <input type="number" class="form-control  rounded-0" id="price"
+                         placeholder="Le Prix du consultation" name="price" [(ngModel)]="con.price">
                 </div>
                 <div class="form-group">
                   <label for="typea">Type Consultation</label>
@@ -257,55 +60,58 @@
                     <option *ngFor="let tp of types" [ngValue]="tp">{{tp.libelle}}</option>
                   </select>
                 </div>
-                <div class="row">
-                  <div class="col-md-12">
-                  </div>
-                </div>
-                <p></p>
-                <button type="submit" class="btn btn-outline-primary pull-left" (click)="ajouterCons($event)">Ajouter
-                </button>
-                <button type="reset" class="btn btn-outline-warning pull-left">Annuler</button>
-                <div class="clearfix"></div>
-
               </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" *ngIf="editer" (click)="validerModification()">
+                Save diagnostic
+              </button>
             </div>
           </div>
         </div>
+      </div>
+
+
+
+      <div class="row">
 
         <!-- Informations d'un profil -->
 
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title ">Liste des Consultations</h4>
+              <h4 class="card-title ">Historique des Consultations</h4>
               <p class="card-category"></p>
             </div>
             <div class="card-body" *ngIf="cons">
               <div class="table-responsive">
                 <table class="table">
                   <thead class=" text-primary">
+                  <th>Date de Consultation</th>
                   <th>Motif</th>
                   <th>Diagnostic</th>
-                  <th>Pris</th>
-                  <th>Date de Consultation</th>
+                  <th>Prix</th>
+                  <th>Nom du Patient</th>
                   <th>Type Consultation</th>
                   <th>Actions</th>
                   <tbody *ngFor="let element of cons">
                   <tr>
+                    <td>{{element?.dater}}</td>
                     <td>{{element?.motif}}</td>
                     <td>{{element?.diagnostic}}</td>
                     <td>{{element?.price}}</td>
                     <td class="text-primary">
-                      {{element?.dateC}}
+                      {{element?.user?.nom}} {{element?.user?.prenom}}
                     </td>
-                    <td>{{element?.typeConsultation.libelle}}</td>
+                    <td>{{element?.typeConsultation?.libelle}}</td>
                     <td>
-                      <button type="button" rel="tooltip" title="Modifier medicament"
+                      <button type="button" rel="tooltip" title="Modifier Consultation"
                               (click)="editConsultation(element?.id)" class="btn btn-primary btn-link btn-sm"
-                              data-toggle="modal" data-target="#updatemedicament">
+                              data-toggle="modal" data-target="#updatecons">
                         <i class="material-icons">edit</i>
                       </button>
-                      <button type="button" rel="tooltip" title="Supprimer le compte"
+                      <button type="button" rel="tooltip" title="Supprimer Consultation"
                               class="btn btn-danger btn-link btn-sm" *ngIf="element?.id != undefined"
                               (click)="delete(element?.id)">
                         <i class="material-icons">close</i>
@@ -316,34 +122,34 @@
                   </tbody>
                 </table>
 
-                <div class="modal fade" id="updatemedicament" tabindex="-1" role="dialog"
+                <div class="modal fade" id="updatecons" tabindex="-1" role="dialog"
                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-body">
                         <form>
                           <div class="form-group">
-                            <label for="libelle"> Nouveau Motif</label>
-                            <input type="text" class="form-control  rounded-0" id="libelle"
-                                   placeholder="Motif" name="libelle" [(ngModel)]="con.motif">
+                            <label for="dater">Date de consultation</label>
+                            <input type="date" class="form-control  rounded-0" id="dater"
+                                   placeholder="date De consultation" name="dater" [(ngModel)]="con.dater">
                           </div>
 
                           <div class="form-group">
-                            <label for="diag">Nouveau Diagnostic</label>
-                            <input type="text" class="form-control rounded-0" name="diag" id="diag"
-                                   placeholder="Diagnotic" [(ngModel)]="con.Diagnostic">
+                            <label for="motif">Nouveau Motif</label>
+                            <input type="text" class="form-control rounded-0" name="motif" id="motif"
+                                   placeholder="Motif" [(ngModel)]="con.motif">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="diagnostic">Nouveau Diagnostic</label>
+                            <input type="text" class="form-control  rounded-0" id="diagnostic"
+                                   placeholder="Diagnostic " name="diagnostic" [(ngModel)]="con.diagnostic">
                           </div>
 
                           <div class="form-group">
                             <label for="price"> Nouveau Prix</label>
                             <input type="number" class="form-control  rounded-0" id="price"
-                                   placeholder="Prix " name="quantite" [(ngModel)]="con.price">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="dateC"> Nouvelle Date d'expiration</label>
-                            <input type="date" class="form-control  rounded-0" id="dateC"
-                                   placeholder="La Date" name="dateC" [(ngModel)]="con.dateC">
+                                   placeholder="Le Prix du consultation" name="price" [(ngModel)]="con.price">
                           </div>
                           <div class="form-group">
                             <label for="typea">Type Consultation</label>
@@ -371,6 +177,7 @@
 
         <!-- end infos -->
       </div>
+
 
     </div>
     <app-footer></app-footer>

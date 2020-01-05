@@ -85,16 +85,53 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-
               <ul class="list-group" *ngFor="let element of medecins">
                 <li class="list-group-item active">{{element?.nom}} {{element?.prenom}}</li>
                 <li class="list-group-item">Adresse :  {{element?.adresse}}</li>
                 <li class="list-group-item">Specialite :  {{element?.specialite}}</li>
                 <li class="list-group-item">Plus d'infos :  {{element?.infos}}</li>
-                <button type="button" rel="tooltip" title="Edit"  class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#updateprofil">
+                <button type="button" rel="tooltip" title="Modifier medicament" (click)="editerMedecin(element?.id)" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#updatemedicament">
                   <i class="material-icons">edit</i>
                 </button>
               </ul>
+
+              <div class="modal-body" *ngIf="editer">
+                <form>
+                  <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control  rounded-0" id="nom"
+                           placeholder="Le Nom" name="nom" [(ngModel)]="medecin.nom">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" class="form-control rounded-0" name="prenom" id="prenom"
+                           placeholder="Le Prenom" [(ngModel)]="medecin.prenom">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="specialite">Specialite</label>
+                    <input type="text" class="form-control  rounded-0" id="specialite"
+                           placeholder="la Specialite" name="quantite" [(ngModel)]="medecin.specialite">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="adresse">Adresse</label>
+                    <input type="text" class="form-control  rounded-0" id="adresse"
+                           placeholder="le nom du document" name="adresse" [(ngModel)]="medecin.adresse">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="infos">Informations supp</label>
+                    <input type="text" class="form-control  rounded-0" id="infos"
+                           placeholder="Infos" name="infos" [(ngModel)]="medecin.infos">
+                  </div>
+
+                  <button type="button"  class="btn btn-primary" *ngIf="editer" (click)="validerModification()">Save changes</button>
+
+
+                </form>
+              </div>
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

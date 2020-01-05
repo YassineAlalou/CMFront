@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {ConsultationService} from '../services/consultation.service';
 import {Consultation} from '../classes/consultation';
 import {TypeserviceService} from '../services/typeservice.service';
+import {RendezvousService} from '../services/rendezvous.service';
+import {RendezvousComponent} from '../rendezvous/rendezvous.component';
+import {Rendezvous} from '../classes/rendezvous';
 declare var swal: any;
 
 @Component({
@@ -11,73 +14,71 @@ declare var swal: any;
 })
 export class ConsultationComponent implements OnInit {
 
-  constructor(private consultationService: ConsultationService, private typeConsultationService: TypeserviceService) { }
+  constructor(private rendezvousService: RendezvousService, private typeConsultationService: TypeserviceService) { }
   cons;
   public types;
+  public rdvdater;
   public editer = false;
-  public con: Consultation = new Consultation();
+  public con: Rendezvous = new Rendezvous();
 
 
   ngOnInit() {
-      this.consultationService.getAll().subscribe((data: any) => {
+      this.rendezvousService.getAllRendezvous().subscribe((data: any) => {
         this.cons = data;
         console.log(this.cons);
       });
-      this.typeConsultationService.getTypes().subscribe((data : any[]) => {
-        this.types = data;
+      this.typeConsultationService.getTypes().subscribe((data: any[]) => {
+        console.log(data);
+        this.types = data ;
+        // this.cons.typeConsultation = data;
       });
   }
-  ajouterCons(e){
-    e.preventDefault();
-    console.log(this.con.typeConsultation);
-    this.consultationService.save(this.con, this.con.typeConsultation.id).subscribe((data) =>{
-      this.cons.push(this.con);
-      this.con = new Consultation();
-      swal('Consultation ajoutée!', '', 'success');
-      this.consultationService.getAll().subscribe((data: any[] ) => {
-        this.cons = data;
-      });
+
+  FindByDater(dater) {
+    this.rendezvousService.getRendezvousByDater(dater).subscribe((data: any) => {
+      if (data.body !== null) {
+        console.log(data);
+        this.rdvdater = data.body;
+        console.log(this.rdvdater);
+        swal('Rendez-vous trouves', '', 'success'); }
+      if (data.body.length === 0) {
+        swal('Aucun Rendez-vous trouve', '', 'error'); }
     });
   }
 
-  delete(id: any){
-      this.consultationService.delete(id).subscribe((data: any) =>{
+  delete(id: any) {
+      this.rendezvousService.deleteRendezvous(id).subscribe((data: any) => {
         swal('Consultation Supprimé!', '', 'success');
-        this.consultationService.getAll().subscribe((data: any[]) => {
+        this.rendezvousService.getAllRendezvous().subscribe(( data: any[]) => {
           this.cons = data;
         });
       });
   }
 
-  editConsultation(id){
+  editConsultation(id) {
     console.log(id);
     this.editer = true;
-    this.consultationService.getConsultation(id).subscribe((data:any) =>{
+    this.rendezvousService.getRendezvous(id).subscribe((data:any) => {
       this.con.id = data.body.id;
-      this.con.dateC =  data.body.dateC;
-      this.con.Diagnostic = data.body.diagnostic;
+      this.con.dater =  data.body.dater;
+      this.con.diagnostic = data.body.diagnostic;
       this.con.motif = data.body.motif;
       this.con.price = data.body.price;
+      this.con.user = data.body.user;
       this.con.typeConsultation = data.body.typeConsultation;
     });
   }
 
-  validerModification(){
+  validerModification() {
     console.log(this.con);
-    this.consultationService.upadte(this.con).subscribe((data)=>{
-      this.consultationService.getAll().subscribe((data: any[]) =>{
+    this.rendezvousService.updateRendezvous(this.con).subscribe((data) => {
+      this.rendezvousService.getAllRendezvous().subscribe(( data: any[]) => {
         this.cons = data;
       });
     });
     this.editer = false;
-    this.con = new Consultation();
+    this.con = new Rendezvous();
   }
-  inistaliser(){
-    this.con.dateC = undefined;
-    this.con.typeConsultation = undefined;
-    this.con.price = undefined;
-    this.con.Diagnostic = undefined;
-    this.con.motif = undefined;
-  }
+
 
 }

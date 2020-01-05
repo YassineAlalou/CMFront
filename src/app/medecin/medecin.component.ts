@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {MedecinService} from '../services/medecin.service';
 import {Medecin} from '../classes/medecin';
+import {Medicament} from '../classes/medicament';
 declare var swal: any;
 
 @Component({
@@ -48,6 +49,33 @@ export class MedecinComponent implements OnInit {
   }
 
 
+  editerMedecin(id) {
+    this.editer = true;
+    this.medecinService.getMedecin(id).subscribe((data: any) => {
+      this.medecin.id = data.body.id;
+      this.medecin.nom = data.body.nom;
+      this.medecin.prenom = data.body.prenom;
+      this.medecin.specialite = data.body.specialite;
+      this.medecin.adresse = data.body.adresse;
+      this.medecin.infos = data.body.infos;
+      console.log(this.medecin);
+    });
+  }
+
+  validerModification() {
+    console.log(this.medecin);
+    this.medecinService.updateMedecin(this.medecin).subscribe((data) => {
+      this.medecinService.getAllMedecins().subscribe((data: any[]) => {
+        this.medecins = data;
+        console.log(data);
+      });
+
+    });
+
+    this.editer = false;
+    this.medecin = new Medecin();
+
+  }
 
 
 

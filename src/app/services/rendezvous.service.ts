@@ -12,8 +12,8 @@ export class RendezvousService {
 
   constructor(private http: HttpClient, public router: Router) { }
 
-  getAllRendezvous(): Observable<any[]> {
-    return this.http.get<any[]>(this.url + 'rendezvous/all');
+  getAllRendezvous() {
+    return this.http.get (this.url + 'rendezvous/all');
 }
 
   ajouterRendezvous(rendezvous , un) {
@@ -32,13 +32,21 @@ export class RendezvousService {
     return this.http.get(this.url + 'rendezvous/' + id , { observe: 'response'});
   }
 
+  getRendezvousByDater(dater) {
+    const d = dater.toString();
+    return this.http.get(this.url + 'rendezvous/dat/' + d , { observe: 'response'});
+  }
+
   updateRendezvous(rdv) {
     console.log('Rendez-vous update', rdv);
     return this.http.put(this.url + 'rendezvous/' + rdv.id, {
         id: rdv.id,
         dater: rdv.dater,
         motif: rdv.motif,
-        user: rdv.user
+        diagnostic: rdv.diagnostic,
+        price: rdv.price,
+        user: rdv.user,
+        typeConsultation: rdv.typeConsultation
       },
       { observe: 'response'});
   }
