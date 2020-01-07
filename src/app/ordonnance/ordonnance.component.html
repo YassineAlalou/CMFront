@@ -1,0 +1,104 @@
+<body class="">
+<app-sidebar2></app-sidebar2>
+<div class="wrapper ">
+  <div class="main-panel">
+    <!-- Navbar -->
+    <app-header></app-header>
+    <br>
+    <br>
+
+    <div class="tim-typo">
+      <p class="text-primary">
+        Trouver les rendez-vous par date :
+      </p>
+    </div>
+
+    <div class="input-group no-border">
+      <input type="date" value="" class="form-control" placeholder="Search..." [(ngModel)]="ord.dater" >
+      <button type="submit" class="btn btn-white btn-round btn-just-icon" (click)="FindByDater(ord.dater)">
+        <i class="material-icons">search</i>
+        <div class="ripple-container"></div>
+      </button>
+    </div>
+
+    <div class="col-md-12" *ngIf="ordate">
+      <div class="card">
+        <div class="card-header card-header-warning">
+          <h4 class="card-title">Consultations trouvees</h4>
+          <p class="card-category">La liste des consultation : {{ord.dater}}</p>
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-hover">
+            <thead class="text-warning">
+            <th>Nom et Prenom</th>
+            <th>Le motif</th>
+            <th>Diagnostic</th>
+            <th>Le Type du consultation</th>
+            <th>Le prix</th>
+            <th>Imprimer</th>
+            </thead>
+            <tbody *ngFor="let element of ordate">
+            <tr>
+              <td>{{element?.user?.nom}}  {{element?.user?.prenom}}</td>
+              <td>{{element?.motif}}</td>
+              <td>{{element?.diagnostic}}</td>
+              <td>{{element?.typeConsultation?.libelle}}</td>
+              <td>{{element?.price}}</td>
+              <td><button type="button" rel="tooltip" title="Print Ordonnance"
+                      (click)="printPDF(element?.id)"
+                      class="btn btn-primary btn-link btn-sm"
+                      data-toggle="modal" data-target="#updatemedicament">
+                <i class="material-icons">print</i>
+              </button></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <body class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Historique des Consultations</h4>
+        <p class="card-category"></p>
+      </div>
+      <div class="card-body" *ngIf="ords">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+            <th>Motif</th>
+            <th>Diagnostic</th>
+            <th>Prix</th>
+            <th>Date de Consultation</th>
+            <th>Type Consultation</th>
+            <th>Actions</th>
+            <tbody *ngFor="let element of ords">
+            <tr>
+              <td>{{element?.motif}}</td>
+              <td>{{element?.diagnostic}}</td>
+              <td>{{element?.price}}</td>
+              <td class="text-primary">
+                {{element?.dater}}
+              </td>
+              <td>{{element?.typeConsultation?.libelle}}</td>
+              <td>
+                <button type="button" rel="tooltip" title="Print Ordonnance"
+                        (click)="printPDF(element?.id)"
+                        class="btn btn-primary btn-link btn-sm"
+                        data-toggle="modal" data-target="#updatemedicament">
+                  <i class="material-icons">print</i>
+                </button>
+                <button type="button" rel="tooltip" title="Supprimer le Ordonnance"
+                        class="btn btn-danger btn-link btn-sm" *ngIf="element?.id != undefined"
+                        (click)="delete(element?.id)">
+                  <i class="material-icons">close</i>
+                </button>
+              </td>
+            </tr>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </body>
