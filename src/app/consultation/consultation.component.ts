@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ConsultationService} from '../services/consultation.service';
-import {Consultation} from '../classes/consultation';
 import {TypeserviceService} from '../services/typeservice.service';
 import {RendezvousService} from '../services/rendezvous.service';
-import {RendezvousComponent} from '../rendezvous/rendezvous.component';
 import {Rendezvous} from '../classes/rendezvous';
 declare var swal: any;
 
@@ -23,15 +20,20 @@ export class ConsultationComponent implements OnInit {
 
 
   ngOnInit() {
-      this.rendezvousService.getAllRendezvous().subscribe((data: any) => {
-        this.cons = data;
-        console.log(this.cons);
-      });
-      this.typeConsultationService.getTypes().subscribe((data: any[]) => {
-        console.log(data);
-        this.types = data ;
-        // this.cons.typeConsultation = data;
-      });
+      this.Init();
+  }
+
+  Init() {
+    this.rendezvousService.getAllRendezvous().subscribe((data: any) => {
+      this.cons = data;
+      console.log(this.cons);
+    });
+    this.typeConsultationService.getTypes().subscribe((data: any[]) => {
+      console.log(data);
+      this.types = data ;
+      // this.cons.typeConsultation = data;
+    });
+
   }
 
   FindByDater(dater) {
@@ -73,7 +75,8 @@ export class ConsultationComponent implements OnInit {
     console.log(this.con);
     this.rendezvousService.updateRendezvous(this.con).subscribe((data) => {
       this.rendezvousService.getAllRendezvous().subscribe(( data: any[]) => {
-        this.cons = data;
+        this.cons = new Array();
+        this.Init();
       });
     });
     this.editer = false;

@@ -15,6 +15,7 @@ import {ConsultationComponent} from './consultation/consultation.component';
 import {MedicamentComponent} from './medicament/medicament.component';
 import {RendezvousComponent} from './rendezvous/rendezvous.component';
 import {MedecinComponent} from './medecin/medecin.component';
+import {OrdonnanceComponent} from './ordonnance/ordonnance.component';
 
 
 const routes: Routes = [
@@ -60,6 +61,11 @@ const routes: Routes = [
     path: 'patienthome',
     component: PatienthomeComponent,
     canActivate: [PatientGuard]
+  },
+  {
+    path: 'ordonnance',
+    component: OrdonnanceComponent,
+    canActivate: [SecretaireGuard]
   },
   {
     path: 'rendezvous',

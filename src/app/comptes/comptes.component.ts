@@ -1,10 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthentificationService} from '../services/authentification.service';
 import {User} from '../classes/user';
 import {Role} from '../classes/role';
 declare var swal: any;
-declare var $:any;
+declare var $: any;
 @Component({
   selector: 'app-comptes',
   templateUrl: './comptes.component.html',

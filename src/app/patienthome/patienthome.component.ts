@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { SchedulerEvent } from '@progress/kendo-angular-scheduler';
-import { sampleData, displayDate } from './events-utc';
+import {Component, OnInit} from '@angular/core';
 import {Rendezvous} from '../classes/rendezvous';
 import {RendezvousService} from '../services/rendezvous.service';
 import {AuthentificationService} from '../services/authentification.service';
+
+
 
 @Component({
   selector: 'app-patienthome',
@@ -17,27 +17,27 @@ export class PatienthomeComponent implements OnInit {
   public rendezvous: Rendezvous = new Rendezvous();
   public users;
   public username;
+  public events;
 
   constructor(private rendezvousService: RendezvousService, private authentificationService: AuthentificationService) { }
 
-  public selectedDate: Date = displayDate;
-  public events: SchedulerEvent[] = sampleData;
+  public calendarEvents ;
+  public calendarOptions;
 
   ngOnInit() {
     this.username = localStorage.getItem('username');
     this.rendezvousService.getAllRendezvous().subscribe((data: any[]) => {
       this.rendezvouss = data;
-      for (const val of this.rendezvouss) {
-        if (val.user.username === this.username) {
-          this.mesrdv.push(val);
-         }
-      }
-      console.log(this.mesrdv);
-    });
-    this.authentificationService.getAllUsers().subscribe((data: any[]) => {
-      this.users = data;
+      data.forEach(element => {
+        this.calendarEvents = this.calendarEvents.concat({
+          title: element.motif.toString(),
+          // backgroundColor:"blue",
+          start: element.datr,
+          end: element.dater,
+          allDay: true
+        });
+      });
     });
   }
-
 }
 

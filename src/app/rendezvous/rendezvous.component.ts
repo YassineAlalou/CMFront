@@ -40,9 +40,8 @@ export class RendezvousComponent implements OnInit {
         this.rendezvouss.push(this.rendezvous);
         this.rendezvous = new Rendezvous();
         swal('rendez-vous ajouté!', '', 'success');
-        this.rendezvousService.getAllRendezvous().subscribe( ( data: any[] ) => {
-          this.mesrdv = data;
-        });
+        this.mesrdv = new Array();
+        this.Init();
       });
     } else {swal('Date invalide', '', 'error'); }
     // this.Init();
@@ -51,9 +50,8 @@ export class RendezvousComponent implements OnInit {
   deleteRendezvous(id: any) {
     this.rendezvousService.deleteRendezvous(id).subscribe(( data) => {
       swal('rendez-vous Supprimé!', '', 'success');
-      this.rendezvousService.getAllRendezvous().subscribe( ( data: any[] ) => {
-         this.mesrdv = data;
-      });
+      this.mesrdv = new Array();
+      this.Init();
     });
 
   }
@@ -91,10 +89,8 @@ export class RendezvousComponent implements OnInit {
   validerModification() {
     console.log(this.rendezvous);
     this.rendezvousService.updateRendezvous(this.rendezvous).subscribe((data) => {
-      this.rendezvousService.getAllRendezvous().subscribe((data: any[]) => {
-        this.mesrdv = data;
-        console.log(this.mesrdv);
-      });
+      this.mesrdv = new Array();
+      this.Init();
 
     });
 

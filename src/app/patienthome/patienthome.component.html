@@ -7,22 +7,51 @@
     <!-- End Navbar -->
     <div class="content">
 
+      <div class="main-content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
 
-        <kendo-scheduler [kendoSchedulerBinding]="events"
-                         [selectedDate]="selectedDate"
-                         scrollTime="08:00"
-                         style="height: 600px;">
+                  <div class="main-content">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="card">
+                            <div class="card-body">
+
+                              <kendo-scheduler [kendoSchedulerBinding]="events"
+                                               [selectedDate]="selectedDate"
+                                               scrollTime="08:00"
+                                               style="height: 600px;">
 
 
-          <kendo-scheduler-month-view>
-          </kendo-scheduler-month-view>
+                                <kendo-scheduler-month-view>
+                                </kendo-scheduler-month-view>
 
-          <kendo-scheduler-timeline-view>
-          </kendo-scheduler-timeline-view>
+                                <kendo-scheduler-timeline-view>
+                                </kendo-scheduler-timeline-view>
 
-          <kendo-scheduler-agenda-view>
-          </kendo-scheduler-agenda-view>
-        </kendo-scheduler>
+                                <kendo-scheduler-agenda-view>
+                                </kendo-scheduler-agenda-view>
+                              </kendo-scheduler>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
 
